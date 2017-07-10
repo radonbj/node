@@ -1,0 +1,14 @@
+以无认证的方式启动mongodb：mongod --port 27017 --dbpath c:\data\db1
+
+以加认证的方式启动mongodb：mongod --auth --port 27017 --dbpath c:\data\db1
+
+创建用户：
+use admin
+
+　　　　db.createUser(
+　　　　   {
+　　　　　　user: "siteUserAdmin",
+　　　　　　pwd: "password",
+　　　　　　roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+　　　　   }
+　　　　)
